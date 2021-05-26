@@ -4,6 +4,12 @@ TwitchPlaysGames "easy" to use for everyone is a project which aims to provide a
 
 This is version-1, failures may occur.
 
+Information for OBS overlay, Browser sources at:
+- http://127.0.0.1:8877/currentmode [current_mode] # Democracy or Anarchy
+- http://127.0.0.1:8877/counter [time-after-pressing-start-emulator] # Countup
+- http://127.0.0.1:8877/currentapm [current_apm] # Actions x minute
+- http://127.0.0.1:8877/currentmode_stats [current_stats] # [Anarchy,Democracy]
+
 # EN<br>
 TwitchPlaysGames is an application made entirely in Python which includes it's own webserver so you can get info in realtime in your OBS overlay.<br><br>
 TwitchPlaysGames attempts for a very easy to use method the own software will try to download the emulator for you and in your Documents/TwitchPlays-Storage/Configs you will find a sample config and you can create your own for every game.<br><br> You only will need to press the button "Launch" and the software will execute the emulator for you, will connect to the Twitch Chat and start getting commands to process them.<br><br>
