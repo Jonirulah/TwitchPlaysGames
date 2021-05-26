@@ -1,0 +1,125 @@
+application:
+    version: 1
+    language: es
+    logging-level: 1 # Set to 1 for more printing
+
+application-info:
+    main-folder: Documents\\TwitchPlays-Storage
+    emulators-path: Documents\\TwitchPlays-Storage\\Emulators
+    config-path: Documents\\TwitchPlays-Storage\\Config
+    roms-path: Documents\\TwitchPlays-Storage\\Roms
+    dl-temp-path: AppData\\Local\\Temp\\TwitchPlays-Storage
+
+twitch-bot:
+    oauth: "oauth:"
+    channel: "jonirulah"
+
+emulators:
+    Visual Boy Advance:
+        name: Visual Boy Advance (GBA)
+        version: v2.1.4
+        url: https://github.com/visualboyadvance-m/visualboyadvance-m/releases/download/v2.1.4/visualboyadvance-m-Win-32bit.zip
+        exec_file: visualboyadvance-m.exe
+    DeSmuME:
+        name: DeSmuME (NDS)
+        version: v0.9.11
+        url: https://kumisystems.dl.sourceforge.net/project/desmume/desmume/0.9.11/desmume-0.9.11-win32.zip
+        exec_file: DeSmuME_0.9.11_x86.exe
+    Citra:
+        name: Citra (3DS)
+        version: v-nightly-1708
+        url: https://github.com/citra-emu/citra-nightly/releases/download/nightly-1708/citra-windows-mingw-20210513-e7671d9.7z
+        exec_file: nightly-mingw//citra.exe
+    Dolphin:
+        name: Dolphin (GCU & Wii)
+        version: 5.0-14095
+        url: https://dl.dolphin-emu.org/builds/f6/3d/dolphin-master-5.0-14095-x64.7z
+        exec_file: Dolphin-x64//Dolphin.exe
+
+languages:
+    en:
+        application_title : TwitchPlaysGames v1.0
+        welcome_msg: Welcome to TwitchPlaysGames v1.0 - created by Jonirulah.
+        rom_emulator: Emulator
+        actions_log: Actions Log
+        chat_log: Chat Log
+        chat_init: Chat starts here.
+        chat_ready: Bot is connected to Twitch.
+        chat_connecting: Connecting to Twitch...
+        chatmode_onchange: Chat mode switched to
+        chatmode_selector_default: Chat Mode
+        rom_selector_default: Select a ROM
+        rom_onchange: ROM switched to
+        emu_selector_default: Select an Emulator
+        emu_onchange: Emulator switched to 
+        emu_notinstalled: is not installed.
+        emu_installed: installed.
+        emu_executing: Starting the emulator
+        downloading: Downloading
+        from: from
+        downloaded: Downloaded
+        download_failed: Download failed.
+        error: ERROR
+        of: of
+        download_finished: Download successful
+        start_emu: Launch
+        config_selector_default: Select a configuration file
+        config_error_parsing: Error in the configuration file
+        config_onchange: Configuration switched to
+        anarchy: Anarchy
+        democracy: Democracy
+        select_mode: Select a Mode
+        standard_error_title: Missing parameters
+        standard_error: Check that you didn't left any parameter in blank.
+        broken_link: The download link is broken.
+        reason: Reason
+        apm_selector_default: Actions x min
+        apm_onchange: You have changed the Actions per Minute to 
+        by: by
+        webserver_start: The web server has been started at 
+        last_action: Last movement by
+        nobody: Nobody
+        downloading_cfgs: Downloading Config Files from Github
+    es:
+        application_title : TwitchPlaysGames v1.0
+        welcome_msg: Bienvenido a TwitchPlaysGames v1.0 - creado por Jonirulah.
+        rom_emulator: Emulador
+        actions_log: Registro de Acciones
+        chat_log: Registro del Chat
+        chat_init: El chat comienza aqui.
+        chat_ready: Bot conectado a Twitch.
+        chat_connecting: Conectando a Twitch...
+        chatmode_onchange: Has cambiado el modo de chat a
+        chatmode_selector_default: Modo de Chat
+        rom_selector_default: Selecciona una ROM
+        rom_onchange: Has cambiado la ROM a
+        emu_selector_default: Selecciona un Emulador
+        emu_onchange: Has cambiado el emulador a 
+        emu_notinstalled: no esta instalado.
+        emu_installed: esta instalado.
+        emu_executing: Iniciando el emulador
+        downloading: Descargando
+        from: de
+        downloaded: Descargado
+        download_failed: Descarga fallida.
+        error: ERROR
+        of: de
+        download_finished: Descarga completada
+        start_emu: Iniciar
+        config_selector_default: Selecciona un archivo de configuracion
+        config_error_parsing: Error en el fichero de configuracion
+        config_onchange: Has cambiado la configuracion a 
+        anarchy: Anarquia
+        democracy: Democracia
+        select_mode: Selecciona un Modo
+        standard_error_title: Faltan parametros
+        standard_error: Comprueba que no hayas dejado ningun campo en blanco.
+        broken_link: El enlace de descarga esta roto.
+        reason: Razon
+        apm_selector_default: Acciones x min
+        apm_onchange: Has cambiado las Acciones por Minuto a
+        by: por
+        webserver_start: Se ha iniciado el servidor web en
+        last_action: Ultimo movimiento por
+        nobody: Nadie
+        downloading_cfgs: Descargando archivos de configuración desde Github
