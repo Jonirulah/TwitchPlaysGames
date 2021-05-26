@@ -1,5 +1,8 @@
 # TwitchPlaysGames
 TwitchPlaysGames "easy" to use for everyone is a project which aims to provide an easy environment for all kind of users to get their TwitchPlays in their streams in almost no-time without even programming. Also no need to install Python, no need to install Node.js, no need to install libraries if you are using the executable file on releases.
+![image](https://user-images.githubusercontent.com/25936173/119594928-fb35e480-bddc-11eb-822a-ad43fac394e0.png)
+
+This is version-1, failures may occur.
 
 # EN<br>
 TwitchPlaysGames is an application made entirely in Python which includes it's own webserver so you can get info in realtime in your OBS overlay.<br><br>
