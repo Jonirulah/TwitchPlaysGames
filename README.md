@@ -17,7 +17,7 @@ TwitchPlaysGames attempts for a very easy to use method the own software will tr
 # Instructions:
 - Go to the settings.yaml file on the same folder as the executable file, and you will see this stuff<br>
 - You can go to the settings.yaml file and change your language to 'en' English or 'es' Spanish.
-```
+```yaml
 twitch-bot:
     - oauth: "oauth:1234"
     - channel: "jonirulah"
@@ -30,7 +30,7 @@ Just place the file at Documents/TwitchPlays-Storage/Roms and restart the softwa
 
 # You can add more configs to TwitchPlaysGames 
 Just create a new file at Documents/TwitchPlays-Storage/Configs and add your config example:
-```
+```yaml
 name: Configuration for Pokemon RED (GBA)
 author: Jonirulah
 
@@ -66,7 +66,7 @@ You can use "single-tap" or "maintain", "maintain" will always need a press-time
 
 # You can add more emulators to TwitchPlaysGames
   You just need to get to the settings.yaml file and add your own entry example<br>
-   ```
+   ```yaml
 Visual Boy Advance:
     - name: Emulator TEST (GBA)
     - version: v0.0
@@ -85,7 +85,7 @@ TwitchPlaysGames attempts for a very easy to use method the own software will tr
 
 # Instrucciones:
 - Ves al fichero settings.yaml en la misma carpeta que el ejecutable y verás estas 3 líneas en el fichero.<br>
-```
+```yaml
 twitch-bot:
     - oauth: "oauth:1234"
     - channel: "jonirulah"
@@ -98,7 +98,7 @@ Simplemente mete el archivo en la carpeta Documents/TwitchPlays-Storage/Roms y r
 
 # Puedes añadir más ficheros de configuración a TwitchPlaysGames 
 Simplemente crea un fichero en Documents/TwitchPlays-Storage/Configs ya añade tu configuración, aquí tienes un ejemplo.
-```
+```yaml
 name: Configuration for Pokemon RED (GBA)
 author: Jonirulah
 
@@ -134,7 +134,7 @@ Puedes usar "single-tap" o "maintain", "maintain" siempre requerirá el uso de u
 
 # Puedes añadir mas emuladores a TwitchPlaysGames
   Debes acceder al fichero settings.yaml y añadir una nueva entrada, aquí tienes un ejemplo:<br>
-   ```
+   ```yaml
 Visual Boy Advance:
     - name: Emulador TEST (GBA)
     - version: v0.0
