@@ -2,7 +2,8 @@
 TwitchPlaysGames "easy" to use for everyone is a project which aims to provide an easy environment for all kind of users to get their TwitchPlays in their streams in almost no-time without even programming. Also no need to install Python, no need to install Node.js, no need to install libraries if you are using the executable file on releases.<br><br>
 ![image](https://user-images.githubusercontent.com/25936173/119594928-fb35e480-bddc-11eb-822a-ad43fac394e0.png)
 
-This is version-1, failures may occur.
+This is version-1, failures may occur.<br>
+At this moment version-1 is chat-broken in the exe file, so you need Python in order to execute it and install a lot of libraries, after compiling it's complaining about a missing library that it's not missing, so at this moment you need the source code in order to get it right.
 
 Information for OBS overlay, Browser sources at:
 - http://127.0.0.1:8877/currentmode [current_mode] # Democracy or Anarchy
