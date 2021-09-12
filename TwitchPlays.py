@@ -8386,24 +8386,26 @@ class Ui_MainWindow(object):
                     # Decompressing Phase 1
                     try:
                         # Process for ZIP based files
-                        with ZipFile(main_folder + "\\" + conf["application-info"]["dl-temp-path"] + '\\' + entry + '\\' + entry + ".zip", 'r') as zipObj:
+                        with ZipFile(main_folder + "\\" + conf["application-info"]["dl-temp-path"] + '\\' + entry + ".zip", 'r') as zipObj:
                             listOfFileNames = zipObj.namelist()
                             for x in listOfFileNames:
                                 print(x)
                             zipObj.extractall(main_folder + "\\" + conf["application-info"]["emulators-path"] + "\\" + entry + "\\")
                         decompressed = True
-                    except:
+                    except Exception as e:
+                        print(e)
                         decompressed = False
 
                     # Decompressing Phase 2
                     try:
                         # Process for 7z based files
                         if decompressed == False:
-                            with py7zr.SevenZipFile(main_folder + "\\" + conf["application-info"]["dl-temp-path"] + '\\' + entry + '\\' + entry + ".zip", 'r') as archive:
+                            with py7zr.SevenZipFile(main_folder + "\\" + conf["application-info"]["dl-temp-path"] + '\\' + entry + ".zip", 'r') as archive:
                                 archive.extractall(path=main_folder + "\\" + conf["application-info"]["emulators-path"] + "\\" + entry + "\\")
                             decompressed = True
-                    except:
+                    except Exception as e:
                         decompressed = False
+                        print(e)
                     CurrentEmulator(entry)
                 else:
                     ui.ActionsLog(MainWindow, current_lang["download_failed"] + " " + current_lang["error"] + req.status_code)
@@ -8715,7 +8717,6 @@ class Ui_MainWindow(object):
                             if message.content == command:
                                 vote_counter[command] = vote_counter[command] + 1
                                 ui.ChatLog(MainWindow, message.author.name + ": " + message.content)
-                                break
                     await self.handle_commands(message)
 
             loop = asyncio.new_event_loop()
@@ -8888,7 +8889,8 @@ class Ui_MainWindow(object):
         def AddAllRoms(self, MainWindow):
             files = os.listdir(main_folder + "\\" + conf["application-info"]["roms-path"])
             for x in files:
-                self.romSelector.addItem(x)
+                if ".sav" not in x:
+                    self.romSelector.addItem(x)
                 
         def AddAllModes(self, MainWindow):
             self.modeSelector.addItem(current_lang["democracy"])
