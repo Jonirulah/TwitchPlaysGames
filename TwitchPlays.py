@@ -8671,7 +8671,9 @@ class Ui_MainWindow(object):
                 def __init__(self):
                     super().__init__(irc_token=conf["twitch-bot"]["oauth"], client_id='...', nick=conf["twitch-bot"]["channel"], prefix='!',
                                     initial_channels=["#" + conf["twitch-bot"]["channel"]])
-
+                    WebServerExec = threading.Thread(target=WebServer)
+                    WebServerExec.setDaemon(False)
+                    WebServerExec.start()
                 async def event_ready(self):
                     ui.ChatLog(MainWindow, current_lang["chat_ready"])
                     if current_mode == current_lang["democracy"]:
@@ -9009,7 +9011,7 @@ def WebServer():
         global current_mode
         if current_mode == "":
             return '''
-                <body onload= "JavaScript:AutoRefresh(''' + str(3000) + ''');">
+                <body onload= "JavaScript:AutoRefresh(''' + str(500) + ''');">
                 </body>
                 <script type = "text/JavaScript">
                         function AutoRefresh(t) {
@@ -9028,7 +9030,7 @@ def WebServer():
                         .color {color: red; font-size: 72px; font-family: 'Exo 2';}
                     </style>
                 </head>
-                <body onload= "JavaScript:AutoRefresh(''' + str(3000) + ''');">
+                <body onload= "JavaScript:AutoRefresh(''' + str(500) + ''');">
                     <label class="color" id="mode">''' + current_lang["anarchy"] + '''</label>
                     <script type = "text/JavaScript">
                             function AutoRefresh(t) {
@@ -9048,7 +9050,7 @@ def WebServer():
                         .color {color: green; font-size: 72px; font-family: 'Exo 2';}
                     </style>
                 </head>
-                <body onload= "JavaScript:AutoRefresh(''' + str(3000) + ''');">
+                <body onload= "JavaScript:AutoRefresh(''' + str(500) + ''');">
                     <label class="color" id="mode">''' + current_lang["democracy"] + '''</label>
                     <script type = "text/JavaScript">
                             function AutoRefresh(t) {
@@ -9063,7 +9065,7 @@ def WebServer():
         global current_apm
         if current_apm == current_lang["apm_selector_default"]:
             return '''
-                <body onload= "JavaScript:AutoRefresh(''' + str(3000) + ''');">
+                <body onload= "JavaScript:AutoRefresh(''' + str(500) + ''');">
                 </body>
                 <script type = "text/JavaScript">
                         function AutoRefresh(t) {
@@ -9082,7 +9084,7 @@ def WebServer():
                         .color {color: green; font-size: 72px; font-family: 'Exo 2';}
                     </style>
                 </head>
-                <body onload= "JavaScript:AutoRefresh(''' + str(3000) + ''');">
+                <body onload= "JavaScript:AutoRefresh(''' + str(500) + ''');">
                     <label class="color" id="mode">''' + str(current_apm) + '''</label>
                     <script type = "text/JavaScript">
                             function AutoRefresh(t) {
@@ -9094,6 +9096,7 @@ def WebServer():
     @webserver.route('/currentmode_stats')
     def mode_stats():
         global anarchy_selected, current_mode, current_apm, anarchy_command, current_config, vote_counter
+        print(current_mode, current_apm)
         if current_mode == "" or current_apm == current_lang["apm_selector_default"] or current_config == "":
             return '''
                 <head>
@@ -9105,7 +9108,7 @@ def WebServer():
                         .color {color: green; font-size: 72px; font-family: 'Exo 2';}
                     </style>
                 </head>
-                <body onload= "JavaScript:AutoRefresh(''' + str(3000) + ''');">
+                <body onload= "JavaScript:AutoRefresh(''' + str(500) + ''');">
                 </body>
                 <script type = "text/JavaScript">
                         function AutoRefresh(t) {
@@ -9221,9 +9224,6 @@ if __name__ == "__main__":
     app.setStyle('Fusion')
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
-    WebServerExec = threading.Thread(target=WebServer)
-    WebServerExec.setDaemon(False)
-    WebServerExec.start()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
